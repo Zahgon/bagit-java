@@ -5,85 +5,65 @@ import java.util.Objects;
 /**
  * The version of the bagit specification used to create the bag.
  */
-public final class Version implements Comparable<Version>{
-  public final int major;
-  public final int minor;
-  
-  private transient final String cachedToString;
-  
-  public Version(final int major, final int minor){
-    this.major = major;
-    this.minor = minor;
-    this.cachedToString = major + "." + minor;
-  }
-  
-  public static Version LATEST_BAGIT_VERSION() {
-    return new Version(1, 0);
-  }
+public final class Version implements Comparable<Version> {
 
-  @Override
-  public String toString() {
-    return cachedToString;
-  }
+    public final int major;
 
-  @Override
-  public int compareTo(final Version o) {
-    //a negative integer - this is less than specified object
-    //zero - equal to specified object
-    //positive - greater than the specified object
-    if(major > o.major || major == o.major && minor > o.minor){
-      return 1;
+    public final int minor;
+
+    private transient final String cachedToString;
+
+    public Version(final int major, final int minor) {
+        this.major = major;
+        this.minor = minor;
+        this.cachedToString = major + "." + minor;
     }
-    if(major == o.major && minor == o.minor){
-      return 0;
-    }
-    
-    return -1;
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(major) + Objects.hash(minor);
-  }
-
-  @Override
-  public boolean equals(final Object obj) {
-    if (this == obj){
-      return true;
+    public static Version LATEST_BAGIT_VERSION() {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    if (obj == null){
-      return false;
-    }
-    if (!(obj instanceof Version)){
-      return false;
-    }
-    
-    final Version other = (Version) obj;
-    
-    return Objects.equals(major, other.major) && Objects.equals(minor, other.minor); 
-  }
-  
-  public boolean isNewer(final Version version){
-    return this.compareTo(version) > 0;
-  }
-  
-  public boolean isSameOrNewer(final Version version){
-    return this.compareTo(version) >= 0;
-  }
-  
-  public boolean isOlder(final Version version){
-    return this.compareTo(version) < 0;
-  }
-  
-  public boolean isSameOrOlder(final Version version){
-    return this.compareTo(version) <= 0;
-  }
 
-  public int getMajor() {
-    return major;
-  }
+    @Override
+    public String toString() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-  public int getMinor() {
-    return minor;
-  }
+    @Override
+    public int compareTo(final Version o) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    @Override
+    public int hashCode() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public boolean isNewer(final Version version) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public boolean isSameOrNewer(final Version version) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public boolean isOlder(final Version version) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public boolean isSameOrOlder(final Version version) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public int getMajor() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    public int getMinor() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

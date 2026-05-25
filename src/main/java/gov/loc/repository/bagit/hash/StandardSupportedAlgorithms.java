@@ -3,27 +3,24 @@ package gov.loc.repository.bagit.hash;
 /**
  * The standard algorithms that are supported "out of the box" in bagit
  */
-public enum StandardSupportedAlgorithms implements SupportedAlgorithm{
-  MD5("MD5"),
-  SHA1("SHA-1"),
-  SHA224("SHA-224"),
-  SHA256("SHA-256"),
-  SHA512("SHA-512");
+public enum StandardSupportedAlgorithms implements SupportedAlgorithm {
 
-  private final String messageDigestName;
-  
-  private StandardSupportedAlgorithms(final String messageDigestName){
-    this.messageDigestName = messageDigestName;
-  }
+    MD5("MD5"), SHA1("SHA-1"), SHA224("SHA-224"), SHA256("SHA-256"), SHA512("SHA-512");
 
-  @Override
-  public String getMessageDigestName() {
-    return messageDigestName;
-  }
+    private final String messageDigestName;
 
-  @SuppressWarnings({"PMD.UseLocaleWithCaseConversions"})
-  @Override
-  public String getBagitName() {
-    return name().toLowerCase();
-  }
+    private StandardSupportedAlgorithms(final String messageDigestName) {
+        this.messageDigestName = messageDigestName;
+    }
+
+    @Override
+    public String getMessageDigestName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
+
+    @SuppressWarnings({ "PMD.UseLocaleWithCaseConversions" })
+    @Override
+    public String getBagitName() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }
